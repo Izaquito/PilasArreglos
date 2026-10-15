@@ -19,7 +19,7 @@ namespace PilasArreglos
         {
             if (_tope == _pila.Length) 
             {
-                throw new Exception("La pila esta llena"); 
+                _tope = 0; 
             }
             _pila[_tope] = dato;
             _tope++;
@@ -27,9 +27,9 @@ namespace PilasArreglos
 
         public void Eliminar()
         {
-            if (_tope == 0)
+            if (_tope == -1)
             {
-                throw new Exception("La pila esta vacia");
+                _tope = _pila.Length;
             }
             _tope--;
             _pila[_tope] = string.Empty;
