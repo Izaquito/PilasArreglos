@@ -8,11 +8,13 @@ namespace PilasArreglos
     {
         string[] _pila;
         int _tope;
+        int _topefijo;
 
         public Pilas(int elementos)
         {
             _pila = new string[elementos];
             _tope = 0;
+            _topefijo = _pila.Length;
         }
 
         public void Agregar(string dato)
@@ -40,7 +42,7 @@ namespace PilasArreglos
         public string ObtenerDatos()
         {
             StringBuilder datos = new StringBuilder();
-            for (int i = 0; i < _tope; i++)
+            for (int i = 0; i < _topefijo; i++)
             {
                 datos.AppendLine(_pila[i]);
             }
