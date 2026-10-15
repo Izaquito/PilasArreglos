@@ -20,23 +20,35 @@ namespace PilasArreglos
 
         public void Agregar(string dato)
         {
-            if (_tope < _pila.Length) 
+            if (_tope == _pila.Length)
             {
-                _tope = 0; 
+                _tope = 0;
             }
-            _pila[_tope] = dato;
-            _tope++;
+            if (string.IsNullOrWhiteSpace(_pila[_tope]))
+            {
+                _pila[_tope] = dato;
+                _tope++;
+            }
+            else
+            {
+                throw new Exception("Ya existe un elemento en esa posición.");
+                _tope++;
+            }
         }
 
         public void Eliminar()
         {
+            if (_pila[_tope] == null)
+            {
+                throw new Exception("No hay elementos en la pila para eliminar.");
+            } else {  
             _pila[_tope] = string.Empty;
             _tope--;
             if (_tope == -1)
             {
                 _tope = _pila.Length;
             }
-            
+        }
 
         }
 
