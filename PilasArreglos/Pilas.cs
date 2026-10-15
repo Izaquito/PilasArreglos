@@ -19,7 +19,7 @@ namespace PilasArreglos
 
         public void Agregar(string dato)
         {
-            if (_tope == _pila.Length) 
+            if (_tope < _pila.Length) 
             {
                 _tope = 0; 
             }
