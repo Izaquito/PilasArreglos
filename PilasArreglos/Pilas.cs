@@ -27,12 +27,14 @@ namespace PilasArreglos
 
         public void Eliminar()
         {
+            _pila[_tope] = string.Empty;
+            _tope--;
             if (_tope == -1)
             {
                 _tope = _pila.Length;
             }
-            _tope--;
-            _pila[_tope] = string.Empty;
+            
+            
         }
 
         public string ObtenerDatos()
