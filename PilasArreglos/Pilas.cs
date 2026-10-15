@@ -10,6 +10,7 @@ namespace PilasArreglos
         int _tope;
         int _topefijo;
 
+
         public Pilas(int elementos)
         {
             _pila = new string[elementos];
@@ -29,13 +30,13 @@ namespace PilasArreglos
 
         public void Eliminar()
         {
-            
+            _pila[_tope] = string.Empty;
             _tope--;
             if (_tope == -1)
             {
                 _tope = _pila.Length;
             }
-            _pila[_tope] = string.Empty;
+            
 
         }
 
